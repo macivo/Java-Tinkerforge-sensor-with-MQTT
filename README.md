@@ -4,7 +4,6 @@ This project demonstrates a possible implementation of a smart door, which can b
 
 ## System
 ![System Overview](https://github.com/yruefenacht/tiny-smart-door/blob/master/thumbnail/smart-door-system.png)
-_Illustration by [Mac Müller](https://github.com/macivo)_
 
 The system consists of the following components:
 * App
@@ -14,7 +13,6 @@ The system consists of the following components:
 
 ## Dataflow
 ![Dataflow](https://github.com/yruefenacht/tiny-smart-door/blob/master/thumbnail/smart-door-dataflow.png)
-_Illustration by [Mac Müller](https://github.com/macivo)_
 
 The software architecture follows the [MQTT-Gateway pattern](https://github.com/knr1/ch.quantasy.iot.mqtt.gateway.tutorial).
 
