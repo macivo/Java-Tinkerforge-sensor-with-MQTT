@@ -1,5 +1,5 @@
 # ![BFH_LOGO](https://github.com/macivo/BFH-Hyperdrive/blob/35d68406f71fcd667e71a2cdd6147c66c41b4a40/git_public/BFH_LOGO.svg) Bern University of Applied Sciences
-#### BTI2015-20/21 Kotlin for Java Developers
+#### BTI7251: Mobile Systems and Terminals
 #### Students: Mac Müller, Yannick Rüfenacht
 #### Advisors: Prof. Dr. Ulrich Fiedler, Prof. Dr. Reto Koenig
 
