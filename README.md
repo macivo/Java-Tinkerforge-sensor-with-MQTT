@@ -1,3 +1,8 @@
+# ![BFH_LOGO](https://github.com/macivo/BFH-Hyperdrive/blob/35d68406f71fcd667e71a2cdd6147c66c41b4a40/git_public/BFH_LOGO.svg) Bern University of Applied Sciences
+#### BTI2015-20/21 Kotlin for Java Developers
+#### Student: Mac Müller, Yannick Rüfenacht
+#### Advisors: Prof. Dr. Ulrich Fiedler, Prof. Dr. Reto Koenig
+
 # Tiny Smart Door
 
 This project demonstrates a possible implementation of a smart door, which can be opened and closed remotely. It uses tinkerforge devices and MQTT to communicate between them.
@@ -19,7 +24,7 @@ The software architecture follows the [MQTT-Gateway pattern](https://github.com/
 ## Sensors
 
 The list of utilised sensors is as follows:
-- 1x [Master Brick](https://www.tinkerforge.com/de/doc/Hardware/Bricks/Master_Brick.html#master-brick) 
+- 1x [Master Brick](https://www.tinkerforge.com/de/doc/Hardware/Bricks/Master_Brick.html#master-brick)
 - 2x [Distance US Bricklet 2.0](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Distance_US_V2.html)
 - 2x [Motorized Linear Poti Bricklet](https://www.tinkerforge.com/de/doc/Hardware/Bricklets/Motorized_Linear_Poti.html)
 

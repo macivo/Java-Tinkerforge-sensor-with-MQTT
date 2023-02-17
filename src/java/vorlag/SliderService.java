@@ -5,12 +5,14 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
-
 import java.net.URI;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/**
+ * Slider Service publishes the current value of Motorized Linear Poti Bricklet
+ *
+ */
 public class SliderService {
 
     public static final String PROTOCOL = "tcp";
@@ -77,7 +79,7 @@ public class SliderService {
             public void position(int position) {
                 System.out.println("Position: " + position); // Range: 0 to 100
                 // send topic with position
-                //new SliderServiceManager(POSITION_TOPIC );
+                // new SliderServiceManager(POSITION_TOPIC );
                 try {
                     String positionAsBytes = Integer.toString(position);
                     MqttMessage message = new MqttMessage(positionAsBytes.getBytes());

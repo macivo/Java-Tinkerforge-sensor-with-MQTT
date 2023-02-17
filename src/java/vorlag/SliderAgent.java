@@ -2,11 +2,14 @@ package vorlag;
 
 import com.tinkerforge.*;
 import org.eclipse.paho.client.mqttv3.*;
-
 import java.net.URI;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Silder agent subscriebs MQTT Topics
+ *
+ */
 
 public class SliderAgent {
 
@@ -67,7 +70,7 @@ public class SliderAgent {
     }
 
     public void startReceivingPosition() throws MqttException{
-// Add position listener
+        // Add position listener
         mlp.addPositionListener(new BrickletMotorizedLinearPoti.PositionListener() {
             public void position(int position) {
                 System.out.println("Position: " + position); // Range: 0 to 100
@@ -82,7 +85,6 @@ public class SliderAgent {
                     e.printStackTrace();
                 }}});
     }
-
 
     private class MQTTMessageHanlder implements MqttCallback {
 

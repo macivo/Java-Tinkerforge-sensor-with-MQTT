@@ -5,12 +5,14 @@ import com.tinkerforge.*;
 import org.eclipse.paho.client.mqttv3.*;
 import org.json.JSONObject;
 import vorlag.SliderService;
-
 import java.net.URI;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-
+/**
+ * Door agent subscriebs MQTT Topics and calculates the distance
+ *
+ */
 public class DoorAgent {
 
     public static final String PROTOCOL = "tcp";
@@ -36,14 +38,9 @@ public class DoorAgent {
 
     private final MqttClient mqttClient;
     private MqttCallback messageHandler;
-
     private static final String HOST = "localhost";
     private static final int BRICK_PORT = 4223;
-
     private ArrayList<SensorData> payloads = new ArrayList<>();
-
-    
-
     private IPConnection ipcon = new IPConnection(); // Create IP connection
 
 
@@ -87,10 +84,8 @@ public class DoorAgent {
     }
 
     public boolean hitOrMiss(double d1, double d2, double alpha, int y, int z){
-
         double z1 = d2 + (y * Math.sin(90 - alpha));
         double z2 = y * Math.sin(alpha - 90);
-
         if (d2 > d1 && z < z1){
             return false;
         }
@@ -118,11 +113,9 @@ public class DoorAgent {
 
 
     private class MQTTMessageHandler implements MqttCallback {
-
         public void connectionLost(Throwable throwable) {
             System.out.println("Connection Lost...");
         }
-
         public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
             ObjectMapper mapper = new ObjectMapper();
             SensorData data = mapper.readValue(mqttMessage.getPayload(), SensorData.class);
@@ -142,7 +135,6 @@ public class DoorAgent {
                 payloads.clear();
             }
         }
-
         public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
             System.out.println("Delivery Complete...");
         }

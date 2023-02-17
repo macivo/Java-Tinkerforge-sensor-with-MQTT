@@ -5,7 +5,6 @@ public class main{
     public static void main(String args[]) throws Exception {
 
         /*
-
         SliderService slider = new SliderService();
         System.out.println("created SliderService");
         slider.connectToBroker();
@@ -24,10 +23,10 @@ public class main{
 
         System.out.println("...press a key to disrupt the network (simulated by System.exit(0)).");
         System.in.read();
-        //critical: If you disconnect gracefully, the testament will not be opened!
-       // slider.disconnectFromBroker();
+        // critical: If you disconnect gracefully, the testament will not be opened!
+        // slider.disconnectFromBroker();
         agent.disconnectFromBroker();
-        //agent.disconnectFromBroker();
+        // agent.disconnectFromBroker();
         System.out.println("Done.");
         System.exit(0);
 

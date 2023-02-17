@@ -2,6 +2,10 @@ package Broker;
 
 import java.sql.Timestamp;
 
+/**
+ * Object: Container of data from distance sensor.
+ *
+ */
 public class SensorData {
 
     private Timestamp timestamp;

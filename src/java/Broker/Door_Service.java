@@ -7,14 +7,16 @@ import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.json.JSONObject;
 import org.json.JSONException;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.sql.Timestamp;
 import java.util.Date;
 
-
+/**
+ * Door Service publishes the distance to MQTT Broker
+ *
+ */
 public class Door_Service {
 
     public static final String PROTOCOL = "tcp";
@@ -35,10 +37,8 @@ public class Door_Service {
     }
 
     private MqttClient mqttClient;
-
     private static final String HOST = "localhost";
     private static final int BRICK_PORT = 4223;
-
     private static final String bDIUID1 = "hHU";
     private static final String bDIUID2 = "hHC";
     private BrickletDistanceIR bDI1;
@@ -46,15 +46,11 @@ public class Door_Service {
     private IPConnection ipcon1 = new IPConnection(); // Create IP connection
     private IPConnection ipcon2 = new IPConnection(); // Create IP connection
 
-
     public Door_Service() throws MqttException{
         mqttClient = new MqttClient(SERVER_URI.toString(), CONNECTION_ID, new MemoryPersistence());
         this.bDI1 = new BrickletDistanceIR(bDIUID1,ipcon1); // Create device object
         this.bDI2 = new BrickletDistanceIR(bDIUID2,ipcon1); // Create device object
-
         connectToBrickDeamon(HOST, BRICK_PORT);
-
-
     }
 
     private void connectToBrickDeamon(String host, int port){
@@ -65,7 +61,6 @@ public class Door_Service {
             ex.printStackTrace();
         }
     }
-
 
     public void connectToBroker() throws MqttException {
         MqttConnectOptions connectOptions = new MqttConnectOptions();
@@ -101,7 +96,6 @@ public class Door_Service {
         } catch (TimeoutException | NotConnectedException e){
             e.printStackTrace();
         }
-
     }
 
     private void getData(int value, String topic, int num) {
